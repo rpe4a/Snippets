@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>MySnippet_TestFixture</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>nutf</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>Scope</ID>
+          <ToolTip>Scope</ToolTip>
+          <Default>Scope</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Class</ID>
+          <ToolTip>Class</ToolTip>
+          <Default>Class</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[[TestFixture]
+    [Parallelizable(ParallelScope.$Scope$)]
+    internal class $Class$Tests
+    {
+
+        public $Class$Tests()
+        {
+        }
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
