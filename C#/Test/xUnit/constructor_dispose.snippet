@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Fact</Title>
+            <Author>
+                WG
+            </Author>
+            <Description>
+                Simple Fact test attribute
+            </Description>
+            <HelpUrl>https://xunit.net/docs/shared-context</HelpUrl>
+            <Shortcut>xdispose</Shortcut>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal Editable="true">
+                    <ID>TestClass</ID>
+                    <ToolTip>TestClass</ToolTip>
+                    <Default>TestClass</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp" Delimiter="$">
+                <![CDATA[
+                public class $TestClass$ : IDisposable
+                {
+                    public $TestClass$()
+                    {
+                    }
+            
+                    public void Dispose()
+                    {
+                    }
+                }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Fact</Title>
+            <Author>
+                WG
+            </Author>
+            <Description>
+                Simple Fact test attribute
+            </Description>
+            <HelpUrl>https://xunit.net/docs/shared-context</HelpUrl>
+            <Shortcut>xcollection</Shortcut>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal Editable="true">
+                    <ID>SomeFixture</ID>
+                    <ToolTip>SomeFixture</ToolTip>
+                    <Default>SomeFixture</Default>
+                </Literal>
+                <Literal Editable="true">
+                    <ID>YourCollection</ID>
+                    <ToolTip>YourCollection</ToolTip>
+                    <Default>YourCollection</Default>
+                </Literal>
+                <Literal Editable="true">
+                    <ID>TestClass</ID>
+                    <ToolTip>TestClass</ToolTip>
+                    <Default>TestClass</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp" Delimiter="$">
+                <![CDATA[
+                public class $SomeFixture$ : IDisposable
+                {
+                    public $SomeFixture$()
+                    {
+                    }
+
+                    public void Dispose()
+                    {
+                    }
+                }
+
+                [CollectionDefinition("$YourCollection$")]
+                public class TestCollection : ICollectionFixture<$SomeFixture$>
+                {
+                    // This class has no code, and is never created. Its purpose is simply
+                    // to be the place to apply [CollectionDefinition] and all the
+                    // ICollectionFixture<> interfaces.
+                }
+
+                [Collection("$YourCollection$")]
+                public class $TestClass$: IClassFixture<$SomeFixture$>
+                {
+                    $SomeFixture$ fixture;
+
+                    public $TestClass$($SomeFixture$ fixture)
+                    {
+                        this.fixture = fixture;
+                    }
+                }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

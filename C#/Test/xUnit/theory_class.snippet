@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Fact</Title>
+            <Author>
+                WG
+            </Author>
+            <Description>
+                Simple Fact test attribute
+            </Description>
+            <HelpUrl>https://xunit.net/docs/getting-started/netfx/visual-studio</HelpUrl>
+            <Shortcut>xtc</Shortcut>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal Editable="true">
+                    <ID>UnitOfWork</ID>
+                    <ToolTip>UnitOfWork</ToolTip>
+                    <Default>UnitOfWork</Default>
+                </Literal>
+                <Literal Editable="true">
+                    <ID>StateUnderTest</ID>
+                    <ToolTip>StateUnderTest</ToolTip>
+                    <Default>StateUnderTest</Default>
+                </Literal>
+                <Literal Editable="true">
+                    <ID>ExpectedBehavior</ID>
+                    <ToolTip>ExpectedBehavior</ToolTip>
+                    <Default>ExpectedBehavior</Default>
+                </Literal>
+                <Literal Editable="true">
+                    <ID>TestClassData</ID>
+                    <ToolTip>TestClassData</ToolTip>
+                    <Default>TestClassData</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp" Delimiter="$">
+                <![CDATA[
+                [Theory]
+                [ClassData(typeof($TestClassData$))]
+                public void $UnitOfWork$_$StateUnderTest$_$ExpectedBehavior$()
+                {
+                    //Arrange
+
+                    //Act
+
+                    //Assert
+                }
+
+                public class $TestClassData$ : IEnumerable<object[]>
+                {
+                    public IEnumerator<object[]> GetEnumerator()
+                    {
+                        yield return new object[] {};
+                    }
+
+                    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+                }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
